@@ -1,0 +1,277 @@
+<html>    
+<body>  
+<div> 
+<h1 id="titulo">Jogo da Forca</h1> 
+</div> 
+<div class="dividois"> 
+<button id="botao" type="submit" onclick="jogodaforca()">Jogar</button> 
+</div> 
+ <style> 
+    *{ 
+        background-color: black; 
+        color: white; 
+        font-family: Arial, Helvetica, sans-serif; 
+        box-sizing: border-box; 
+        margin: 0; 
+    } 
+    div{ 
+        display: flex; 
+        justify-content: center; 
+        padding: 60px; 
+    } 
+    #botao{ 
+        height: 100px; 
+        width: 150px; 
+        background-color: red; 
+        margin-left: 0px; 
+        font-size: x-large; 
+        color: black; 
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+        border-radius: 50px; 
+        border: 2px solid white; 
+    } 
+    #botao:hover{ 
+        font-size: xx-large; 
+        height: 120px; 
+        width: 180px; 
+        margin-top: -10px; 
+    } 
+</style> 
+<script>    
+var qntjogos;    
+qntjogos = 0;    
+var qntvitorias;    
+qntvitorias = 0;    
+var qntderrotas;    
+qntderrotas = 0;    
+var qntpuladas;    
+qntpuladas = 0;    
+function jogodaforca() {    
+qntjogos++; 
+document.write("Jogo da Forca <br>");  
+document.write("V.24060238 <br>") 
+document.write("<br> Iniciando rodada. Jogo: " + qntjogos +  "<br>");    
+document.write("Vitórias: " + qntvitorias + ". Derrotas: " + qntderrotas + " Pulados: " + qntpuladas + ". <br>");    
+var quantidadepalavras;    
+quantidadepalavras = 50;    
+document.write("Quantidade de palavras: " + quantidadepalavras +  "<br>");    
+var palavras = new Array(quantidadepalavras);    
+var temas = new Array(quantidadepalavras);    
+palavras[0] = "construcao";    
+palavras[1] = "tasmania";    
+palavras[2] = "cesar";    
+palavras[3] = "carlos";    
+palavras[4] = "bacamarte";    
+palavras[5] = "arco";    
+palavras[6] = "banana";    
+palavras[7] = "caminhao";    
+palavras[8] = "brasil";    
+palavras[9] = "baleia";    
+palavras[10] = "pizza";    
+palavras[11] = "batata";    
+palavras[12] = "feijao";    
+palavras[13] = "tijolo";    
+palavras[14] = "computador";    
+palavras[15] = "programacao";    
+palavras[16] = "lobisomem";    
+palavras[17] = "jabuti";    
+palavras[18] = "osmose";    
+palavras[19] = "paralelepipedo";    
+palavras[20] = "forno";    
+palavras[21] = "cascata";    
+palavras[22] = "furacao";    
+palavras[23] = "maleta";    
+palavras[24] = "minhoca";    
+palavras[25] = "cereja";    
+palavras[26] = "teclado";    
+palavras[27] = "carangueijo";    
+palavras[28] = "almondega";    
+palavras[29] = "distrito";    
+palavras[30] = "cidade";    
+palavras[31] = "regiao";    
+palavras[32] = "continente";    
+palavras[33] = "jupiter";    
+palavras[34] = "galaxia";    
+palavras[35] = "constelacao";    
+palavras[36] = "submarino";    
+palavras[37] = "cama";    
+palavras[38] = "mingau";    
+palavras[39] = "shrek";    
+palavras[40] = "botao";    
+palavras[41] = "bijuteria";    
+palavras[42] = "mansao";    
+palavras[43]= "janela";    
+palavras[44] = "demolicao";    
+palavras[45] = "espingarda";    
+palavras[46] = "fuzil";    
+palavras[47] = "monitor";    
+palavras[48] = "mentos";    
+palavras[49]= "cocacola";    
+temas[0] = "Engenharia";    
+temas[1] = "Lugar";    
+temas[2] = "Nome";    
+temas[3] = "Nome";    
+temas[4] = "Arma";    
+temas[5] = "Arma";    
+temas[6] = "Comida";    
+temas[7] = "Transporte";    
+temas[8] = "Lugar";    
+temas[9] = "Oceano";    
+temas[10] = "Comida";    
+temas[11] = "Comida";    
+temas[12] = "Comida";    
+temas[13] = "Engenharia";    
+temas[14] = "Computação";    
+temas[15] = "Computação";    
+temas[16] = "Monstro";    
+temas[17] = "Animal";    
+temas[18] = "Química";    
+temas[19] = "Geometria";    
+temas[20] = "Culinária";    
+temas[21] = "Natureza";    
+temas[22] = "Cataclisma";    
+temas[23] = "Compartimento";    
+temas[24] = "Animal";    
+temas[25] = "Comida";    
+temas[26] = "Computação";    
+temas[27] = "Oceano";    
+temas[28] = "Comida";    
+temas[29] = "Lugar";    
+temas[30] = "Lugar";    
+temas[31] = "Lugar";    
+temas[32] = "Lugar";    
+temas[33] = "Astronomia";    
+temas[34] = "Astronomia";    
+temas[35] = "Astronomia";    
+temas[36] = "Transporte";    
+temas[37] = "Lugar";    
+temas[38] = "Comida";    
+temas[39] = "Personagem";    
+temas[40] = "Apetrecho";    
+temas[41] = "Acessório";    
+temas[42] = "Engenharia";    
+temas[43] = "Engenharia";    
+temas[44] = "Engenharia";    
+temas[45] = "Arma";    
+temas[46] = "Arma";    
+temas[47] = "Computação";    
+temas[48] = "Comida";    
+temas[49] = "Bebida";    
+quantidadepalavras = quantidadepalavras - 1;    
+var sorteio;    
+sorteio = Math.random() * quantidadepalavras;    
+sorteio = Math.round(sorteio);    
+var quantidade;    
+var letras = new Array(palavras[sorteio].length);    
+quantidade = palavras[sorteio].length;    
+var slot = new Array();    
+for (z = 0; z <= quantidade - 1; z++) {    
+letras[z] = (palavras[sorteio].charAt(z));    
+slot[z] = "?";    
+}    
+document.write(palavras[sorteio] + ", " + quantidade + " letras. <br>");    
+var tentativas;    
+tentativas = quantidade * 1.5;    
+tentativas = Math.round(tentativas);    
+var letrastentadas = new Array(tentativas);    
+var tentativasres;    
+tentativasres = tentativas;    
+var qntacertos;    
+var promptado;    
+var qntacertos;    
+qntacertos = 0;    
+var ultimaletra;    
+ultimaletra = "";    
+letrastentadas[0] = "Letras usadas: ";    
+var jogardenovo;    
+var config;    
+var dicas;    
+var aleatorio;    
+dicas = Math.random() * (quantidade - 1);    
+dicas = Math.round(dicas);    
+aleatorio = Math.random() * (quantidade - 1);    
+aleatorio = Math.round(aleatorio);    
+slot[dicas] = letras[dicas];    
+for (b = 0; b <= quantidade - 1; b++) {    
+if (slot[dicas] == letras[b]) {    
+slot[b] = letras[b];    
+qntacertos++;    
+letras[b] = null;    
+document.write(slot);     
+document.write("<br>")    
+}    
+}    
+document.write(slot[dicas]);    
+function jogardenovofunc() {    
+    jogardenovo = prompt("Jogar novamente? 1. Sim - 2. Não")    
+    if (jogardenovo == 1){    
+        jogodaforca();    
+    } else if (jogardenovo == 2) {    
+    } else {    
+    alert("Opção inválida.")    
+    jogardenovofunc();      
+    }    
+}    
+for (i = 0; i <= tentativas - 1; i++) {    
+promptado = prompt("Insira a letra. Tema: " + temas[sorteio] + ". Tentativas: " + tentativasres + " Display: " + slot + ". Pular palavra: Digite 0. Letras usadas: " + ultimaletra);    
+document.write("<br> Rodada: " + (tentativas - tentativasres) + "<br>");    
+promptado = promptado.toLowerCase();    
+if (promptado === '0') {    
+    alert("Palavra pulada. " + palavras[sorteio]);    
+    qntpuladas++;    
+    jogodaforca();    
+    break;    
+} else if (promptado.length !== 1 || promptado.toUpperCase() != promptado.toLowerCase() == false) {    
+    alert("Digito inválido. " + promptado);    
+        document.write("Digito inválido: " + promptado);    
+        promptado = "Inválido: " + promptado;    
+        tentativasres++;    
+        i--;   
+} else {    
+    for (k = 0; k <= quantidade - 1; k++) {    
+    if (promptado == letrastentadas[k]) {    
+        alert("Letra repetida. " + promptado);    
+        document.write("Letra repetida. " + promptado);    
+        promptado = "Repetido: " + promptado;    
+        i--;    
+        tentativasres++;
+        break; 
+    }    
+}    
+}    
+document.write("Letra inserida: " + promptado + ".<br>");    
+tentativasres--;    
+letrastentadas[i] = promptado;    
+ultimaletra = (ultimaletra + letrastentadas[i] +  " " );    
+if (letras.includes(promptado) == true) {    
+for (b = 0; b <= quantidade - 1; b++) {    
+if (promptado == letras[b]) {    
+slot[b] = letras[b];    
+qntacertos++;    
+letras[b] = null;    
+document.write(slot);     
+document.write("<br>")    
+}    
+}    
+}    
+if (qntacertos == quantidade) {    
+alert("Você ganhou. N* de tentativas: " + (tentativas-tentativasres) + ", Tentativas restantes: " + tentativasres + ", Palavra: " + palavras[sorteio]);    
+document.write("Você ganhou. N* de tentativas: " + (tentativas-tentativasres) + ", Palavra: " + palavras[sorteio] + ". <br>");    
+qntvitorias++;    
+jogardenovofunc();    
+break;    
+}    
+if (tentativasres == 0 || tentativasres < 0) {    
+alert("Você perdeu. A palavra era: " + palavras[sorteio] + ".");    
+document.write("VOCE PERDEU. <br> A palavra era: " + palavras[sorteio] + ".");    
+qntderrotas++;    
+jogardenovofunc();    
+break;    
+}    
+document.write("<br> Quantidade de acertos: " + qntacertos + "<br>");    
+}    
+}    
+//jogodaforca();    
+</script> 
+</body>    
+</html> 
